@@ -12,4 +12,4 @@ This two buttons are supervised by the Arduino. The following events will be det
 4. Shortcut to ground
 5. A wire two the buttons are disconnected. 
 
- ![Circuit.png](https://github.com/InTheCar/Arduino-Nano-Fragment-RotarySwitch/blob/main/pictures/RotarySwitchNew.png)
+ ![Circuit.png](https://github.com/InTheCar/Arduino-Nano-Fragment-Two-Buttons-With-Diagnostic/blob/main/pictures/Circuit.png)
