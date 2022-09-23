@@ -39,6 +39,13 @@ void loop() {
 int switch_value=0;
 
 switch_value=get_switch(SW1_PIN);
+if (switch_value==0){
+  digitalWrite(LED1_PIN, HIGH);
+  digitalWrite(LED2_PIN, HIGH);
+  digitalWrite(LED3_PIN, HIGH);
+  digitalWrite(LED4_PIN, HIGH);
+  digitalWrite(LED5_PIN, HIGH);
+}
 if (switch_value==1){
   digitalWrite(LED1_PIN, HIGH);
   digitalWrite(LED2_PIN, LOW);
@@ -68,6 +75,13 @@ if (switch_value==4){
   digitalWrite(LED4_PIN, HIGH);
   digitalWrite(LED5_PIN, LOW);
 }
+if (switch_value==5){
+  digitalWrite(LED1_PIN, LOW);
+  digitalWrite(LED2_PIN, LOW);
+  digitalWrite(LED3_PIN, LOW);
+  digitalWrite(LED4_PIN, LOW);
+  digitalWrite(LED5_PIN, HIGH);
+}
 
 
 
@@ -78,7 +92,7 @@ if (switch_value==4){
 int get_switch(int AD_Wandler){
   int return_value = 0;
   int x = analogRead(AD_Wandler);
-  if (x >= 360 && x <= 390){
+  if (x >= 690 && x <= 710){
     return_value = 1;//Switch OK, no Button pressed
   }
   else if (x >= 640 && x <= 670){
@@ -90,5 +104,15 @@ int get_switch(int AD_Wandler){
   else if (x >= 1010 && x <= 1023){
     return_value = 4; //on line cutted
   }
+  else if (x >= 500 && x <= 520){
+    return_value = 4; //Botton wires short cut
+  }
+  else if (x >= 0 && x <= 10){
+    return_value = 4; //Botton wires short cut
+  }
+  else if (x >= 540 && x <= 560){
+    return_value = 4; //Botton wires short cut
+  }
+  
   return(return_value);
 }
